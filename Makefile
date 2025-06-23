@@ -1,31 +1,31 @@
-NAME = libftprintf.a
+# Compiler ve flags
+CC      = cc
+CFLAGS  = -Wall -Wextra -Werror
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# Dosya isimleri
+NAME    = libftprintf.a
+SRCS = ft_printf.c ft_char.c ft_number.c ft_hex.c ft_pointer.c
+OBJS    = $(SRCS:.c=.o)
+INCS    = ft_printf.h
 
-SRC = ft_printf.c
-OBJ = $(SRC:.c=.o)
-
-BONUS_SRC = ft_printf_bonus.c
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
-
+# Kural: Varsayılan hedef
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+# Arşiv oluşturulması sadece objeler güncelse olur
+$(NAME): $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
-%.o: %.c ft_printf.h
+# .c -> .o çevirimi
+%.o: %.c $(INCS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Temizlik komutları
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
