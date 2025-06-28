@@ -4,7 +4,7 @@ CFLAGS  = -Wall -Wextra -Werror
 
 # Dosya isimleri
 NAME    = libftprintf.a
-SRCS = ft_printf.c ft_char.c ft_number.c ft_hex.c ft_pointer.c
+SRCS 	= ft_printf.c ft_char.c ft_number.c ft_hex.c ft_pointer.c
 OBJS    = $(SRCS:.c=.o)
 INCS    = ft_printf.h
 

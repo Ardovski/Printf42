@@ -3,5 +3,8 @@
 #include "ft_printf.h"
 int main()
 {
-	printf("%p", "a");
+	printf("arda\n");
+	int a = ft_printf("arda");
+	int b = ft_printf("%s %d","arda",31);
+	ft_printf("%d\n", b);
 }
