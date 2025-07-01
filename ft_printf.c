@@ -34,6 +34,11 @@ static int	ft_format_parse(const char *format, va_list args, int i)
 		count += ft_puthex(va_arg(args, unsigned int), 1);
 	else if (format[i] == 'p')
 		count += ft_putptr(va_arg(args, void *));
+	else
+	{
+		count += ft_putchar('%');
+		count += ft_putchar(format[i]);
+	}
 	return (count);
 }
 
