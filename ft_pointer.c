@@ -11,14 +11,13 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stddef.h>
 
 int	ft_putptr(void *ptr)
 {
 	int	count;
 
 	count = 0;
-	if (ptr == NULL)
+	if (!ptr)
 		count += ft_putstr("(nil)");
 	else
 	{

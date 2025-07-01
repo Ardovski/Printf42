@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uozdes <uardaozdes@gmail.com>              +#+  +:+       +#+        */
+/*   By: uardaozdes <uardaozdes@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:04:06 by uozdes            #+#    #+#             */
-/*   Updated: 2025/06/23 16:19:58 by uozdes           ###   ########.fr       */
+/*   Updated: 2025/07/01 15:31:42 by uardaozdes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-
-# include <stdarg.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
